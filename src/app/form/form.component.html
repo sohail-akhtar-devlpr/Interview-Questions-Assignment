@@ -1,0 +1,94 @@
+<form [formGroup]="form" class="p-6 bg-gray-100 min-h-screen">
+<div class="p-6 bg-gray-100 min-h-screen">
+  <!-- Form Container -->
+  <div class="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <!-- Normal Input -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Normal</label>
+      <input type="text" placeholder="Placeholder text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+    </div>
+
+    <!-- Normal Input -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Normal</label>
+      <input type="text" placeholder="Placeholder text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+    </div>
+
+    <!-- Password Input -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Password</label>
+      <input type="password" placeholder="********" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+    </div>
+
+    <!-- Focus State Input -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Focus</label>
+      <input type="text" placeholder="Placeholder text" class="mt-1 block w-full px-3 py-2 border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+    </div>
+
+    <!-- Email Input with Validation -->
+    <div>
+      @if (emailIsInvalid) {
+        <label for="email" class="block text-sm font-medium text-gray-700">Error</label>
+      }
+      <input
+        id="email"
+        type="email"
+        placeholder="you@example.com"
+        class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        formControlName="email"
+      />
+      
+      <!-- Error Message using @if() -->
+      @if (emailIsInvalid) {
+        <p class="mt-2 text-sm text-red-600">Please provide a valid email address.</p>
+      }
+    </div>
+
+    <!-- Autocomplete -->
+    <div class="col-span-1 relative">
+      <label class="block text-sm font-medium text-gray-700">Autocomplete</label>
+      <input type="text" placeholder="Search UI" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      <ul class="absolute z-10 bg-white shadow-lg rounded-md mt-1 w-full border border-gray-300">
+        <li class="px-3 py-2 hover:bg-gray-100 cursor-pointer">UI design</li>
+        <li class="px-3 py-2 hover:bg-gray-100 cursor-pointer">UI design practice</li>
+        <li class="px-3 py-2 hover:bg-gray-100 cursor-pointer">UI pattern</li>
+        <li class="px-3 py-2 hover:bg-gray-100 cursor-pointer">Daily UI</li>
+      </ul>
+    </div>
+
+    <!-- Active State Input -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Active</label>
+      <input type="text" value="UI" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+    </div>
+
+    <!-- Date Input -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Date</label>
+      <input type="date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+      placeholder="pick a date">
+    </div>
+
+     <!-- Empty Div for third column, third row -->
+     <div></div>
+
+    <!-- Normal Input -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Normal</label>
+      <input type="text" placeholder="Placeholder text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+    </div>
+
+    <!-- Number Input -->
+    <div class="col-span-2 flex items-center space-x-4">
+      <label class="block text-sm font-medium text-gray-700">Value</label>
+      <button class="px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-white">+</button>
+      <input type="number" value="0" class="w-16 text-center px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+      <button class="px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-white">-</button>
+    </div>
+
+    <!-- Empty Div for third column, fourth row -->
+    <div></div>
+  </div>
+</div>
+</form>
